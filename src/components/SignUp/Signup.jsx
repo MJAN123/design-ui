@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
 export class Signup extends Component {
+  // Handle Route
+  handleRoute = () => {
+    this.props.history.push('/login');
+  };
   render() {
     return (
       <div className='signup-container'>
@@ -33,7 +38,11 @@ export class Signup extends Component {
             </div>
 
             <div className='form-field'>
-              <input type='password' placeholder='••••••••••••' />
+              <input
+                type='password'
+                placeholder='••••••••••••'
+                onChange={(e) => {}}
+              />
             </div>
 
             <div className='button'>
@@ -42,7 +51,8 @@ export class Signup extends Component {
           </div>
           <div className='login-signup-switch'>
             <p>
-              Already have an accout? <span>Log in</span>
+              Already have an accout?{' '}
+              <span onClick={this.handleRoute}>Log in</span>
             </p>
           </div>
         </div>
@@ -51,4 +61,4 @@ export class Signup extends Component {
   }
 }
 
-export default Signup;
+export default withRouter(Signup);

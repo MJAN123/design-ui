@@ -4,7 +4,7 @@ export default class InpuField extends Component {
   render() {
     return (
       <div className='loader-container'>
-        <img src={require('../../assets/images/3dgifmaker81409.gif')} />
+        <img src={require('../../assets/images/Bounce-Bar-Preloader-1.gif')} />
       </div>
     );
   }

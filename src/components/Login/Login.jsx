@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
-
+import { withRouter } from 'react-router-dom';
 export class Login extends Component {
+  // Handle Route
+  handleRoute = (route) => {
+    this.props.history.push(route);
+  };
   render() {
     return (
       <div className='signup-container'>
@@ -37,12 +41,18 @@ export class Login extends Component {
             </div>
 
             <div className='button'>
-              <button type='submit'>Login</button>
+              <button
+                type='submit'
+                onClick={() => this.handleRoute('/userForm')}
+              >
+                Login
+              </button>
             </div>
           </div>
           <div className='login-signup-switch'>
             <p>
-              Create New Account! <span>Sign up</span>
+              Create New Account!{' '}
+              <span onClick={() => this.handleRoute('/')}>Sign up</span>
             </p>
           </div>
         </div>
@@ -51,4 +61,4 @@ export class Login extends Component {
   }
 }
 
-export default Login;
+export default withRouter(Login);

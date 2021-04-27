@@ -1,0 +1,35 @@
+.drawer-container {
+  .logo-icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+      margin-left: 0.5rem;
+    }
+  }
+  .drawer-menu-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .drawer-action-button {
+    margin-bottom: 5rem;
+
+    .setting {
+      text-align: center;
+      margin-bottom: 1rem;
+      cursor: pointer;
+    }
+    button {
+      background-image: linear-gradient(160deg, #e14c16 0%, #ee2b2b 100%);
+      color: $light;
+      cursor: pointer;
+
+      width: 100%;
+      border: none;
+      padding: 0.5rem;
+    }
+  }
+}

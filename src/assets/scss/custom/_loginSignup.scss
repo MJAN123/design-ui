@@ -40,7 +40,7 @@
     padding: 1rem;
     background-color: transparent;
     text-align: center;
-
+    color: $primary-light;
     &[type='email'],
     &[type='password'] {
       background-repeat: no-repeat;
@@ -58,6 +58,7 @@
     button {
       background-image: linear-gradient(160deg, #8ceabb 0%, #378f7b 100%);
       color: $light;
+      cursor: pointer;
       margin-bottom: 4rem;
       width: 100%;
       border: 1px solid $primary-dark;
