@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import {
   Drawer,
   IconButton,
@@ -31,9 +32,11 @@ import {
 //   },
 // }));
 export class DrawerMenu extends Component {
+  handleRoute = () => {
+    this.props.history.push('/');
+  };
   render() {
     const { isDrawer, setDrawerOpen, setSettingOpen } = this.props;
-
     return (
       <div className='drawer-container'>
         <React.Fragment>
@@ -104,7 +107,11 @@ export class DrawerMenu extends Component {
                     <Settings onClick={() => setSettingOpen(true)} />
                   </div>
                   <div className='logout'>
-                    <Button variant='contained' color='primary'>
+                    <Button
+                      variant='contained'
+                      color='primary'
+                      onClick={() => this.handleRoute()}
+                    >
                       Logout
                     </Button>
                   </div>
@@ -118,4 +125,4 @@ export class DrawerMenu extends Component {
   }
 }
 
-export default DrawerMenu;
+export default withRouter(DrawerMenu);
