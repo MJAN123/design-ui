@@ -1,0 +1,136 @@
+.setting-modal-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .modal-content {
+    box-shadow: 0 0 250px $drak;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 250px #000;
+    text-align: center;
+    width: 50%;
+    padding: 3rem 1rem;
+
+    .section-title {
+      margin-bottom: 1.5rem;
+      color: $primary-light;
+      font-size: 700;
+      font-size: 20px;
+    }
+    .reset-password-section {
+      border: 1px solid $primary-dark;
+      padding: 2rem 1.5 rem;
+      margin-bottom: 3rem;
+      input {
+        border: 1px solid $primary-dark;
+
+        outline: 0;
+        padding: 0.5rem;
+        background-color: transparent;
+        text-align: left;
+        color: $primary-light;
+
+        width: 100%;
+      }
+      .section-body {
+        display: flex;
+        justify-content: space-around;
+        .input {
+          flex-grow: 1;
+        }
+      }
+      .section-action {
+        text-align: start;
+        padding: 0.5rem 2rem;
+        display: flex;
+        align-items: center;
+        color: $primary-light;
+        cursor: pointer;
+      }
+    }
+    .bank-detail-section {
+      border: 1px solid $primary-dark;
+      padding: 2rem 1.5 rem;
+      margin-bottom: 3rem;
+      .input {
+        width: 30rem;
+      }
+      input {
+        border: 1px solid $primary-dark;
+
+        outline: 0;
+        padding: 0.5rem;
+        background-color: transparent;
+        text-align: left;
+        color: $primary-light;
+
+        width: 100%;
+      }
+      .section-body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+      }
+      .add-new {
+        text-align: start;
+        padding: 0.5rem 1rem;
+        display: flex;
+        align-items: center;
+        color: $primary-light;
+        div {
+          cursor: pointer;
+          margin-right: 0.5rem;
+        }
+      }
+      .action {
+        display: flex;
+        div {
+          margin-right: 1rem;
+        }
+      }
+    }
+    .secret-address-section {
+      border: 1px solid $primary-dark;
+      padding: 2rem 1.5 rem;
+      margin-bottom: 3rem;
+      .input {
+        width: 16rem;
+      }
+      input {
+        border: 1px solid $primary-dark;
+
+        outline: 0;
+        padding: 0.5rem;
+        background-color: transparent;
+        text-align: left;
+        color: $primary-light;
+
+        width: 100%;
+      }
+      .section-body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+      }
+      .add-new {
+        text-align: start;
+        padding: 0.5rem 1rem;
+        display: flex;
+        align-items: center;
+        color: $primary-light;
+        div {
+          cursor: pointer;
+          margin-right: 0.5rem;
+        }
+      }
+      .action {
+        display: flex;
+        div {
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+}

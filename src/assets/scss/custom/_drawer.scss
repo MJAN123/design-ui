@@ -1,11 +1,20 @@
 .drawer-container {
+  .DrawerMenu-drawerPaper-4 {
+    box-shadow: 0 0 250px #000;
+  }
   .logo-icon {
     display: flex;
     justify-content: space-between;
     align-items: center;
     .logo {
-      margin-left: 0.5rem;
+      padding-left: 3rem;
     }
+  }
+  .MuiButtonBase-root {
+    color: $primary-light;
+  }
+  .MuiListItemIcon-root {
+    color: $primary-light;
   }
   .drawer-menu-container {
     height: 100%;
@@ -16,20 +25,27 @@
   }
   .drawer-action-button {
     margin-bottom: 5rem;
-
+    width: 100%;
+    .setting-logout {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: $primary-light;
+    }
     .setting {
       text-align: center;
       margin-bottom: 1rem;
       cursor: pointer;
     }
     button {
-      background-image: linear-gradient(160deg, #e14c16 0%, #ee2b2b 100%);
+      background-color: rgb(95, 125, 201);
       color: $light;
       cursor: pointer;
-
-      width: 100%;
       border: none;
-      padding: 0.5rem;
+      border-radius: 50px;
+      padding: 0.5rem 2rem;
+      width: 100%;
     }
   }
 }

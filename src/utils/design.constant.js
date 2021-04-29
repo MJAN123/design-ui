@@ -3,6 +3,13 @@ import { asyncActionType } from './reduxActions';
 export const FILTER_ACTIONS = {
   ADD_USER_BEGIN: 'ADD_USER_BEGIN',
   ADD_USER: asyncActionType('ADD_USER'),
+  USER_LOGIN_BEGIN: 'USER_LOGIN_BEGIN',
+  USER_LOGIN: asyncActionType('USER_LOGIN'),
+  USER_SIGNUP_BEGIN: 'USER_SIGNUP_BEGIN',
+  USER_SIGNUP: asyncActionType('USER_SIGNUP'),
+  USER_FORM_DATA_BEGIN: 'USER_FORM_DATA_BEGIN',
+  USER_FORM_DATA: asyncActionType('USER_FORM_DATA'),
+  SET_OPEN_DRAWER: 'SET_OPEN_DRAWER',
 };
 
 export default {

@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
   .form-container {
     box-shadow: 0 0 250px $drak;
     display: flex;
@@ -14,6 +15,13 @@
     label {
       color: $primary-light;
     }
+    .form-title {
+      align-self: center;
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 3rem;
+      color: $primary-light;
+    }
     .form-group {
       display: flex;
       justify-content: space-between;
@@ -21,6 +29,11 @@
     .input-radio {
       display: flex;
       width: 40%;
+      .MuiFormGroup-root {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+      }
     }
     input {
       color: inherit;
@@ -53,7 +66,7 @@
     }
   }
   .error-message {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   /* Chrome, Safari, Edge, Opera */

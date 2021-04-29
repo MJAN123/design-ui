@@ -1,7 +1,60 @@
+import { render } from '@testing-library/react';
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import { emailValidator, passwordValidator } from '../../utils/design.constant';
 
 export class Signup extends Component {
+  constructor() {
+    super();
+    this.state = {
+      email: '',
+      password: '',
+      emailError: '',
+      passwordError: '',
+    };
+  }
+  handleChange = (event) => {
+    const { name, value } = event.target;
+
+    this.setState({
+      [name]: value,
+    });
+
+    return;
+  };
+
+  validateEmailAddress() {
+    let emailError = '';
+    const value = this.state.email;
+    if (value.trim === '') emailError = 'Email Address is required';
+    else if (!emailValidator.test(value)) emailError = 'Email is not valid';
+
+    this.setState({
+      emailError,
+    });
+    return emailError === '';
+  }
+
+  validatePassword() {
+    let passwordError = '';
+    const value = this.state.password;
+    if (value.trim === '') passwordError = 'Password is required';
+    else if (!passwordValidator.test(value))
+      passwordError =
+        'Password must contain at least 8 characters, 1 number, 1 upper and 1 lowercase!';
+
+    this.setState({
+      passwordError,
+    });
+    return passwordError === '';
+  }
+  handleSubmit = () => {
+    if (this.validateEmailAddress() && this.validatePassword()) {
+      this.props.history.push('/login');
+    } else {
+      render();
+    }
+  };
   // Handle Route
   handleRoute = () => {
     this.props.history.push('/login');
@@ -34,19 +87,35 @@ export class Signup extends Component {
 
           <div className='form-container'>
             <div className='form-field'>
-              <input type='email' placeholder='info@mailaddress.com' />
+              {this.state.emailError && (
+                <div className='error-message'>{this.state.emailError}</div>
+              )}
+              <input
+                type='email'
+                name='email'
+                placeholder='info@mailaddress.com'
+                onChange={this.handleChange}
+                value={this.state.email}
+              />
             </div>
 
             <div className='form-field'>
+              {this.state.passwordError && (
+                <div className='error-message'>{this.state.passwordError}</div>
+              )}
               <input
+                name='password'
                 type='password'
                 placeholder='••••••••••••'
-                onChange={(e) => {}}
+                onChange={this.handleChange}
+                value={this.state.password}
               />
             </div>
 
             <div className='button'>
-              <button type='submit'>Sign Up</button>
+              <button type='submit' onClick={this.handleSubmit}>
+                Sign Up
+              </button>
             </div>
           </div>
           <div className='login-signup-switch'>

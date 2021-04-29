@@ -2,3 +2,10 @@ body {
   background-color: $base-bgcolor;
   font-family: 'Source Sans Pro', sans-serif;
 }
+.error-message {
+  color: $error;
+}
+
+svg {
+  cursor: pointer;
+}
