@@ -43,7 +43,7 @@ export class Login extends Component {
             <div className='button'>
               <button
                 type='submit'
-                onClick={() => this.handleRoute('/userForm')}
+                onClick={() => this.handleRoute('/google-2fa')}
               >
                 Login
               </button>

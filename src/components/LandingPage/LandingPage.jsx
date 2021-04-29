@@ -6,10 +6,13 @@ import SettingModal from '../SettingModal';
 export default class LandingPage extends Component {
   constructor() {
     super();
+    this.state = {
+      isDrwaer: false,
+    };
   }
 
   render() {
-    const { setDrawerOpen } = this.props;
+    const { setDrawerOpen, isSettingOpen } = this.props;
     return (
       <div className='landing-page-container'>
         <div className='menu-btn'>
@@ -17,14 +20,16 @@ export default class LandingPage extends Component {
             edge='start'
             color='inherit'
             aria-label='menu'
-            onClick={() => setDrawerOpen(true)}
+            onClick={() => {
+              setDrawerOpen(true);
+            }}
           >
             <MenuIcon />
           </IconButton>
         </div>
 
         <Drawer />
-        <SettingModal />
+        {isSettingOpen && <SettingModal />}
       </div>
     );
   }

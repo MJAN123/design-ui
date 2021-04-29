@@ -1,7 +1,10 @@
 import Drawer from './Drawer';
 
 import { connect } from 'react-redux';
-import { setDrawerOpen } from '../../store/actions/application.actions';
+import {
+  setDrawerOpen,
+  setSettingOpen,
+} from '../../store/actions/application.actions';
 import { getIsDrawer } from '../../store/selectors/application.selectors';
 
 const mapStateToProps = (state) => {
@@ -13,5 +16,6 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = {
   setDrawerOpen,
+  setSettingOpen,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Drawer);

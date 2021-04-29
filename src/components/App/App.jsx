@@ -5,6 +5,7 @@ import Signup from '../SignUp';
 import Login from '../Login';
 import UserForm from '../UserForm';
 import LandingPage from '../LandingPage';
+import Google2fa from '../Google2fa';
 export class App extends Component {
   userName = this.props.userName;
 
@@ -24,6 +25,9 @@ export class App extends Component {
             </Route>
             <Route path='/landing-page'>
               <LandingPage />
+            </Route>
+            <Route path='/google-2fa'>
+              <Google2fa />
             </Route>
           </Switch>
         </BrowserRouter>

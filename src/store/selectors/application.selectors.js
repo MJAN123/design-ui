@@ -9,3 +9,6 @@ export const getApplication = (state) => {
 export const getIsDrawer = createSelector(getApplication, (data) => {
   return data.get('isDrawer');
 });
+export const getIsOpenSetting = createSelector(getApplication, (data) => {
+  return data.get('openSetting');
+});

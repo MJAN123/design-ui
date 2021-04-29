@@ -21,29 +21,29 @@ import {
   Settings,
 } from '@material-ui/icons';
 
-const styles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-  },
+// const styles = makeStyles((theme) => ({
+//   root: {
+//     display: 'flex',
+//   },
 
-  drawerPaper: {
-    backgroundColor: theme.primary,
-  },
-}));
+//   drawerPaper: {
+//     backgroundColor: theme.primary,
+//   },
+// }));
 export class DrawerMenu extends Component {
   render() {
-    const { classes, isDrawer, setDrawerOpen } = this.props;
-    console.log(isDrawer);
+    const { isDrawer, setDrawerOpen, setSettingOpen } = this.props;
+
     return (
       <div className='drawer-container'>
         <React.Fragment>
           <Drawer
             variant='persistent'
             anchor='left'
-            open={true}
-            classes={{
-              paper: classes.drawerPaper,
-            }}
+            open={isDrawer}
+            // classes={{
+            //   paper: classes.drawerPaper,
+            // }}
             backgroundColor='primary'
           >
             <div className='logo-icon'>
@@ -101,7 +101,7 @@ export class DrawerMenu extends Component {
               <div className='drawer-action-button'>
                 <div className='setting-logout'>
                   <div className='setting'>
-                    <Settings />
+                    <Settings onClick={() => setSettingOpen(true)} />
                   </div>
                   <div className='logout'>
                     <Button variant='contained' color='primary'>
@@ -118,4 +118,4 @@ export class DrawerMenu extends Component {
   }
 }
 
-export default withStyles(styles, { withTheme: true })(DrawerMenu);
+export default DrawerMenu;

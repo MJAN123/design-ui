@@ -6,3 +6,10 @@ export const setDrawerOpen = (state) => {
     state,
   };
 };
+
+export const setSettingOpen = (state) => {
+  return {
+    type: ACTIONS.SET_OPEN_SETTING,
+    state,
+  };
+};
