@@ -5,3 +5,10 @@ $base-bgcolor: #354152;
 $light: #fff;
 $drak: #000;
 $error: rgb(248, 15, 15);
+$green: #378f7b;
+@mixin ingredientButton {
+  background-image: linear-gradient(160deg, #8ceabb 0%, #378f7b 100%);
+}
+@mixin ingredientButtonHover {
+  background-image: linear-gradient(160deg, #4f9271 50%, #378f7b 100%);
+}

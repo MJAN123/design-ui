@@ -4,4 +4,9 @@
       color: $primary-light;
     }
   }
+  .landing-page-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

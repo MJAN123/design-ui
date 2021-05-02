@@ -3,6 +3,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Drawer from '../Drawer';
 import SettingModal from '../SettingModal';
+import BookingsTable from '../BookingsTable';
 export default class LandingPage extends Component {
   constructor() {
     super();
@@ -13,6 +14,7 @@ export default class LandingPage extends Component {
 
   render() {
     const { setDrawerOpen, isSettingOpen } = this.props;
+
     return (
       <div className='landing-page-container'>
         <div className='menu-btn'>
@@ -27,9 +29,11 @@ export default class LandingPage extends Component {
             <MenuIcon />
           </IconButton>
         </div>
-
-        <Drawer />
-        {isSettingOpen && <SettingModal />}
+        <div className='landing-page-content'>
+          <Drawer />
+          {isSettingOpen === 'setting' && <SettingModal />}
+          {isSettingOpen === 'Booking' && <BookingsTable />}
+        </div>
       </div>
     );
   }

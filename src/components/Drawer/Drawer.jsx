@@ -87,7 +87,11 @@ export class DrawerMenu extends Component {
                     'Trading',
                     'Instruments',
                   ].map((text, index) => (
-                    <ListItem button key={text}>
+                    <ListItem
+                      button
+                      key={text}
+                      onClick={() => setSettingOpen(text)}
+                    >
                       <ListItemIcon>
                         {index === 0 && <NoteAdd />}
                         {index === 1 && <Person />}
@@ -104,7 +108,7 @@ export class DrawerMenu extends Component {
               <div className='drawer-action-button'>
                 <div className='setting-logout'>
                   <div className='setting'>
-                    <Settings onClick={() => setSettingOpen(true)} />
+                    <Settings onClick={() => setSettingOpen('setting')} />
                   </div>
                   <div className='logout'>
                     <Button

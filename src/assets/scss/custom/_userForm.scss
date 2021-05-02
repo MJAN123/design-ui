@@ -34,12 +34,17 @@
         flex-wrap: nowrap;
         flex-direction: row;
       }
+      .MuiRadio-colorSecondary.Mui-checked {
+        color: $green;
+      }
     }
     input {
       color: inherit;
       margin-bottom: 1.2rem;
       border: 1px solid $primary-dark;
       outline: 0;
+      border-radius: 999px;
+
       padding: 0.5rem;
       background-color: transparent;
       text-align: left;
@@ -54,14 +59,18 @@
       align-items: center;
 
       button {
-        background-image: linear-gradient(160deg, #8ceabb 0%, #378f7b 100%);
+        @include ingredientButton;
         color: $light;
         cursor: pointer;
         margin-bottom: 4rem;
-        width: 63%;
+        width: 100%;
         border: 1px solid $primary-dark;
-
-        padding: 0.7rem;
+        border-radius: 999px;
+        padding: 1rem 2rem;
+        margin-left: 10px;
+        &:hover {
+          @include ingredientButtonHover;
+        }
       }
     }
   }

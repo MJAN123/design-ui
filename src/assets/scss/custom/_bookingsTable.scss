@@ -1,0 +1,20 @@
+.booking-table-container {
+  width: 60%;
+  .rdt_Table {
+    color: $primary-light;
+  }
+  .rdt_TableHeadRow {
+    background-color: $primary-light;
+    color: $light;
+  }
+  .rdt_TableRow {
+    background-color: $base-bgcolor;
+    color: $primary-light;
+  }
+  .table-content {
+    box-shadow: 0 0 250px #000;
+  }
+  .rdt_TableHeader {
+    display: none;
+  }
+}

@@ -4,7 +4,7 @@ import ACTIONS from '../../utils/design.constant';
 // Making Store Immutable
 const CURRENT_DRAFT_STATE = fromJS({
   isDrawer: false,
-  openSetting: false,
+  ShowPage: '',
 });
 
 export const applicationReducer = (state = CURRENT_DRAFT_STATE, action) => {
@@ -12,7 +12,7 @@ export const applicationReducer = (state = CURRENT_DRAFT_STATE, action) => {
     case ACTIONS.SET_OPEN_DRAWER:
       return state.set('isDrawer', action.state);
     case ACTIONS.SET_OPEN_SETTING:
-      return state.set('openSetting', action.state);
+      return state.set('ShowPage', action.state);
     default:
       return state;
   }
