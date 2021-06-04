@@ -1,13 +1,14 @@
 $primary-light: #7e8ba3;
-$primary-dark: #242c37;
+$primary-dark: #a5a9af;
 $primary-medium: #fdf;
-$base-bgcolor: #354152;
+$base-bgcolor: #17181c;
 $light: #fff;
-$drak: #000;
+$drak: #5bbbb9;
 $error: rgb(248, 15, 15);
 $green: #378f7b;
 @mixin ingredientButton {
   background-image: linear-gradient(160deg, #8ceabb 0%, #378f7b 100%);
+  
 }
 @mixin ingredientButtonHover {
   background-image: linear-gradient(160deg, #4f9271 50%, #378f7b 100%);

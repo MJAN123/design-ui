@@ -9,7 +9,7 @@
   box-shadow: 0 0 250px $drak;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 0 250px #000;
+  //box-shadow: 0 0 250px #000;
   text-align: center;
   max-width: 20rem;
 
@@ -17,14 +17,30 @@
   align-items: center;
   padding: 4rem 3rem;
   width: 100%;
+  // width: 500px;
+  // height: 500px;
+  // border-radius: 50%;
   h2 {
     font-size: 2.75rem;
     font-weight: 100;
     margin: 0 0 1rem;
+    font-family: 'Allerta', sans-serif;
+
     text-transform: uppercase;
-  }
+    // font-family: 'Fugaz One', cursive;
+    // font-family: 'Amaranth', sans-serif;
+    // font-family: 'Carter One', cursive;
+    //color: #5bbbb9;
+    background: -webkit-linear-gradient(160deg, #378f7b 0%, #8ceabb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+   }
   .icon {
     margin-bottom: 2rem;
+    img {
+      height: 200px;
+      width: 200px;
+    }
   }
   .form-container {
     display: flex;
@@ -47,7 +63,6 @@
       background-size: 1.5rem;
       background-position: 1rem 50%;
     }
-
     width: 90%;
   }
   .button {
@@ -64,7 +79,7 @@
       border: 1px solid $primary-dark;
       border-radius: 999px;
       padding: 1rem 2rem;
-
+      margin-left: 10px;
       &:hover {
         @include ingredientButtonHover;
       }

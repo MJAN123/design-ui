@@ -9,31 +9,19 @@ export class Login extends Component {
     return (
       <div className='signup-container'>
         <div className='register'>
-          <div className='icon'>
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              className='site__logo'
-              width='56'
-              height='84'
-              viewBox='77.7 214.9 274.7 412'
-            >
+          {/* <div className='icon'>
+            <svg width="118pt" height="50pt" viewBox="0 0 530 225"  xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <linearGradient id='a' x1='0%' y1='0%' y2='0%'>
-                  <stop offset='0%' stop-color='#8ceabb' />
-                  <stop offset='100%' stop-color='#378f7b' />
-                </linearGradient>
+                <linearGradient id="grad1" x1="0%" y1="0%" y2="0%"><stop offset="0%" stop-color="#8ceabb"></stop><stop offset="100%" stop-color="#378f7b"></stop></linearGradient>
               </defs>
-              <path
-                fill='url(#a)'
-                d='M215 214.9c-83.6 123.5-137.3 200.8-137.3 275.9 0 75.2 61.4 136.1 137.3 136.1s137.3-60.9 137.3-136.1c0-75.1-53.7-152.4-137.3-275.9z'
-              />
+              <path d="m400 0c-57.007812 0-118.257812 59.519531-144 87.664062-25.742188-28.144531-86.992188-87.664062-144-87.664062-70.128906 0-112 41.871094-112 112s41.871094 112 112 112c57.007812 0 118.257812-59.519531 144-87.664062 25.742188 28.144531 86.992188 87.664062 144 87.664062 70.128906 0 112-41.871094 112-112s-41.871094-112-112-112zm-288 192c-53.070312 0-80-26.910156-80-80s26.929688-80 80-80c42.480469 0 96.910156 50.945312 122.960938 80-26.015626 29.089844-80.386719 80-122.960938 80zm288 0c-42.480469 0-96.910156-50.945312-122.960938-80 26.015626-29.089844 80.386719-80 122.960938-80 53.070312 0 80 26.910156 80 80s-26.929688 80-80 80zm0 0" fill="url(#grad1)" />
             </svg>
-          </div>
-          <h2>Log in</h2>
+          </div> */}
+          <h2>Infinity</h2>
 
           <div className='form-container'>
             <div className='form-field'>
-              <input type='email' placeholder='info@mailaddress.com' />
+              <input type='email' placeholder='UserId' />
             </div>
 
             <div className='form-field'>
@@ -44,6 +32,7 @@ export class Login extends Component {
               <button
                 type='submit'
                 onClick={() => this.handleRoute('/google-2fa')}
+                // onClick={() => console.log('hello')}
               >
                 Login
               </button>

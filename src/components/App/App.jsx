@@ -12,6 +12,7 @@ export class App extends Component {
   render() {
     return (
       <div className='app-container'>
+        <div className="version-info"><span className="key">Build Version:</span><span className="value">V1.0.0.1</span>&nbsp;<span className="key">Release Version:</span><span className="value">V1.0.0.0</span></div>
         <BrowserRouter>
           <Switch>
             <Route exact path='/'>

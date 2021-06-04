@@ -194,7 +194,7 @@ class UserForm extends React.Component {
           </div>
           {this.state.error && (
             <div className='error-message'>
-              Please Fill Complete form Properly to proceed...
+              Please verify all the fields before you submit...
             </div>
           )}
           <div className='submit-btn'>

@@ -1,6 +1,6 @@
 body {
   background-color: $base-bgcolor;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif ;
 }
 .error-message {
   color: $error;
@@ -9,3 +9,16 @@ body {
 svg {
   cursor: pointer;
 }
+
+
+input {
+  &:hover {
+    border: 1px solid $drak;
+    -webkit-box-shadow: 0px 0px 4px 2px $drak; 
+    box-shadow: 0px 0px 4px 2px $drak;
+  }
+  &:focus {
+    border: 1px solid $drak;
+    -webkit-box-shadow: 0px 0px 4px 3px $drak; 
+    box-shadow: 0px 0px 4px 3px $drak;
+  }}
