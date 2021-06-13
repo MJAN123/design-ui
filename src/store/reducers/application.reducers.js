@@ -3,7 +3,7 @@ import ACTIONS from '../../utils/design.constant';
 
 // Making Store Immutable
 const CURRENT_DRAFT_STATE = fromJS({
-  isDrawer: false,
+  isDrawer: true,
   ShowPage: '',
 });
 

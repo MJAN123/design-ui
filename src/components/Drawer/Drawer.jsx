@@ -81,16 +81,19 @@ export class DrawerMenu extends Component {
               <div className='drawer-menu'>
                 <List>
                   {[
-                    'Booking',
-                    'Positions',
-                    'User Management',
-                    'Trading',
-                    'Instruments',
+                    { name: 'Booking', route: 'booking' },
+                    { name: 'Positions', route: 'positions' },
+                    { name: 'User Management', route: 'user-management' },
+                    { name: 'Trading', route: 'trading' },
+                    { name: 'Instruments', route: 'instrument' },
                   ].map((text, index) => (
                     <ListItem
                       button
                       key={text}
-                      onClick={() => setSettingOpen(text)}
+                      onClick={() => {
+                        setSettingOpen(text.name);
+                        this.props.history.push(`/landing-Page/${text.route}`);
+                      }}
                     >
                       <ListItemIcon>
                         {index === 0 && <NoteAdd />}
@@ -99,7 +102,7 @@ export class DrawerMenu extends Component {
                         {index === 3 && <AttachMoney />}
                         {index === 4 && <Build />}
                       </ListItemIcon>
-                      <ListItemText primary={text} />
+                      <ListItemText primary={text.name} />
                     </ListItem>
                   ))}
                 </List>

@@ -14,7 +14,7 @@ import Select from '@material-ui/core/Select';
 import Input from '@material-ui/core/Input';
 import matchSorter from 'match-sorter';
 import MenuItem from '@material-ui/core/MenuItem';
-import { Multiselect } from 'multiselect-react-dropdown';
+import MultiSelect from 'react-multi-select-component';
 import AppBar from '@material-ui/core/AppBar';
 import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
@@ -22,9 +22,6 @@ import SearchInput from '../Common/SearchInput';
 import CustomButton from '../Common/CustomButton';
 import UserRoleTable from '../UserRoleTable/UserRoleTable';
 import makeData from '../makeData';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEdit, faShareAlt, faTrash } from '@fortawesome/free-solid-svg-icons';
-import BookingPopup from '../POPUPS/BookingPopup';
 const Styles = styled.div`
   padding: 1rem;
 `;
@@ -82,7 +79,9 @@ function Table({ columns, data, updateMyData, skipReset }) {
     headerGroups,
     prepareRow,
     page, // Instead of using 'rows', we'll use page,
+    // which has only the rows for the active page
 
+    // The rest of these things are super handy, too ;)
     canPreviousPage,
     canNextPage,
     pageOptions,
@@ -257,193 +256,172 @@ function TabPanel(props) {
   );
 }
 
-function BookingsTable() {
+function UserManagement() {
   const columns = React.useMemo(
     () => [
       {
-        Header: 'Edit',
-        accessor: '',
+        Header: 'User ID',
+        accessor: 'user-id',
+        aggregate: 'count',
+
+        Aggregated: ({ value }) => `${value} Names`,
+      },
+      {
+        Header: 'Full Name',
+        accessor: 'firstName',
+        aggregate: 'count',
+
+        Aggregated: ({ value }) => `${value} Names`,
+      },
+      {
+        Header: 'Country',
+        accessor: 'country',
+        aggregate: 'count',
+
+        Aggregated: ({ value }) => `${value} Names`,
+      },
+      {
+        Header: 'City',
+        accessor: 'city',
+        aggregate: 'count',
+
+        Aggregated: ({ value }) => `${value} Names`,
+      },
+      {
+        Header: 'Street',
+        accessor: 'street',
+        aggregate: 'count',
         Filter: '',
+        Aggregated: ({ value }) => `${value} Names`,
+      },
+      {
+        Header: 'Postal#',
+        accessor: 'postalcode',
+        Filter: '',
+        aggregate: 'count',
+        Aggregated: ({ value }) => `${value} Names`,
+      },
+      {
+        Header: 'Phone#',
+        accessor: 'phonenumber',
+        Filter: '',
+        aggregate: 'count',
+
+        Aggregated: ({ value }) => `${value} Names`,
+      },
+      {
+        Header: 'DOB',
+        accessor: 'bob',
+        Filter: '',
+        aggregate: 'count',
+
+        Aggregated: ({ value }) => `${value} Names`,
+      },
+      {
+        Header: 'Sex',
+        accessor: 'gender',
+        Filter: '',
+        aggregate: 'count',
+
+        Aggregated: ({ value }) => `${value} Names`,
+      },
+
+      {
+        Header: 'Updated By',
+        accessor: 'lastmodifiedby',
+        Filter: '',
+        aggregate: 'uniqueCount',
+        Aggregated: ({ value }) => `${value} Unique Names`,
+      },
+      {
+        Header: 'updated At',
+        accessor: 'lastmodifiedtime',
+        Filter: '',
+        aggregate: 'uniqueCount',
+        Aggregated: ({ value }) => `${value} Unique Names`,
+      },
+
+      {
+        Header: 'Login',
+        accessor: 'lastlogintime',
+        Filter: '',
+        aggregate: 'uniqueCount',
+        Aggregated: ({ value }) => `${value} Unique Names`,
+      },
+
+      {
+        Header: 'Email',
+        accessor: 'emailaddress',
+        Filter: '',
+        aggregate: 'uniqueCount',
+        Aggregated: ({ value }) => `${value} Unique Names`,
+      },
+
+      {
+        Header: 'Created At',
+        accessor: 'createdat',
+        Filter: '',
+        aggregate: 'uniqueCount',
+        Aggregated: ({ value }) => `${value} Unique Names`,
+      },
+
+      {
+        Header: 'User Role',
+        accessor: 'user-role',
+        Filter: '',
+        aggregate: 'uniqueCount',
+        Aggregated: ({ value }) => `${value} Unique Names`,
         Cell: ({ cell }) => (
-          <div className='row-button' onClick={() => setModal(true)}>
-            <FontAwesomeIcon icon={faEdit} />
-          </div>
+          <>
+            {/* {getUserRoles()} */}
+            <MultiSelect
+              options={roles}
+              value={select}
+              onChange={(e) => {
+                setSelect(...e);
+              }}
+              labelledBy='Instrument..'
+            />
+          </>
+        ),
+      },
+
+      {
+        Header: 'Status',
+        accessor: 'status',
+        Filter: '',
+        //filter: 'includes',
+        Cell: ({ cell }) => (
+          <>
+            {/* TODO: Add dynamic data of status */}
+            <select>
+              <option value='approve'>approve</option>
+              <option value='pending'>pending</option>
+              <option value='reject'>reject</option>
+            </select>
+          </>
         ),
       },
       {
-        Header: 'Delete',
+        Header: 'Action',
         accessor: '',
         Filter: '',
         Cell: ({ cell }) => (
           <div className='row-button'>
-            <FontAwesomeIcon icon={faTrash} />
+            <CustomButton
+              btnText='Approve'
+              handleClick={() => this.handleRoute()}
+            />
+
+            <CustomButton
+              variant='contained'
+              btnText='Reject'
+              className='text-red'
+              handleClick={() => this.handleRoute()}
+            />
           </div>
         ),
       },
-      {
-        Header: 'Booking ID',
-        accessor: 'booking-id',
-        aggregate: 'count',
-
-        Aggregated: ({ value }) => `${value} Names`,
-      },
-      {
-        Header: 'Instrument Name',
-        accessor: 'instrumentName',
-        aggregate: 'count',
-
-        Aggregated: ({ value }) => `${value} Names`,
-      },
-      {
-        Header: 'Client ID',
-        accessor: 'client-id',
-        aggregate: 'count',
-
-        Aggregated: ({ value }) => `${value} Names`,
-      },
-      {
-        Header: 'Office ID',
-        accessor: 'office-id',
-        aggregate: 'count',
-
-        Aggregated: ({ value }) => `${value} Names`,
-      },
-      {
-        Header: 'Booking Date',
-        accessor: 'booking-date',
-        aggregate: 'count',
-        Filter: '',
-        Aggregated: ({ value }) => `${value} Names`,
-      },
-
-      // {
-      //   Header: 'Postal#',
-      //   accessor: 'postalcode',
-      //   Filter: '',
-      //   aggregate: 'count',
-      //   Aggregated: ({ value }) => `${value} Names`,
-      // },
-      // {
-      //   Header: 'Phone#',
-      //   accessor: 'phonenumber',
-      //   Filter: '',
-      //   aggregate: 'count',
-
-      //   Aggregated: ({ value }) => `${value} Names`,
-      // },
-      // {
-      //   Header: 'DOB',
-      //   accessor: 'bob',
-      //   Filter: '',
-      //   aggregate: 'count',
-
-      //   Aggregated: ({ value }) => `${value} Names`,
-      // },
-      // {
-      //   Header: 'Sex',
-      //   accessor: 'gender',
-      //   Filter: '',
-      //   aggregate: 'count',
-
-      //   Aggregated: ({ value }) => `${value} Names`,
-      // },
-
-      // {
-      //   Header: 'Updated By',
-      //   accessor: 'lastmodifiedby',
-      //   Filter: '',
-      //   aggregate: 'uniqueCount',
-      //   Aggregated: ({ value }) => `${value} Unique Names`,
-      // },
-      // {
-      //   Header: 'updated At',
-      //   accessor: 'lastmodifiedtime',
-      //   Filter: '',
-      //   aggregate: 'uniqueCount',
-      //   Aggregated: ({ value }) => `${value} Unique Names`,
-      // },
-
-      // {
-      //   Header: 'Login',
-      //   accessor: 'lastlogintime',
-      //   Filter: '',
-      //   aggregate: 'uniqueCount',
-      //   Aggregated: ({ value }) => `${value} Unique Names`,
-      // },
-
-      // {
-      //   Header: 'Email',
-      //   accessor: 'emailaddress',
-      //   Filter: '',
-      //   aggregate: 'uniqueCount',
-      //   Aggregated: ({ value }) => `${value} Unique Names`,
-      // },
-
-      // {
-      //   Header: 'Created At',
-      //   accessor: 'createdat',
-      //   Filter: '',
-      //   aggregate: 'uniqueCount',
-      //   Aggregated: ({ value }) => `${value} Unique Names`,
-      // },
-
-      // {
-      //   Header: 'User Role',
-      //   accessor: 'user-role',
-      //   Filter: '',
-      //   aggregate: 'uniqueCount',
-      //   Aggregated: ({ value }) => `${value} Unique Names`,
-      //   Cell: ({ cell }) => (
-      //     <>
-      //       {/* {getUserRoles()} */}
-      //       <Multiselect
-      //         value='role'
-      //         options={roles} // Options to display in the dropdown
-      //         //selectedValues={this.state.selectedValue} // Preselected value to persist in dropdown
-      //         //onSelect={this.onSelect} // Function will trigger on select event
-      //         //onRemove={this.onRemove} // Function will trigger on remove event
-      //         displayValue='name' // Property name to display in the dropdown options
-      //       />
-      //     </>
-      //   ),
-      // },
-
-      // {
-      //   Header: 'Status',
-      //   accessor: 'status',
-      //   Filter: '',
-      //   //filter: 'includes',
-      //   Cell: ({ cell }) => (
-      //     <>
-      //       {/* TODO: Add dynamic data of status */}
-      //       <select>
-      //         <option value='approve'>approve</option>
-      //         <option value='pending'>pending</option>
-      //         <option value='reject'>reject</option>
-      //       </select>
-      //     </>
-      //   ),
-      // },
-      // {
-      //   Header: 'Action',
-      //   accessor: '',
-      //   Filter: '',
-      //   Cell: ({ cell }) => (
-      //     <div className='row-button'>
-      //       <CustomButton
-      //         btnText='Approve'
-      //         handleClick={() => this.handleRoute()}
-      //       />
-
-      //       <CustomButton
-      //         variant='contained'
-      //         btnText='Reject'
-      //         className='text-red'
-      //         handleClick={() => this.handleRoute()}
-      //       />
-      //     </div>
-      //   ),
-      // },
     ],
     []
   );
@@ -451,47 +429,53 @@ function BookingsTable() {
   const [data, setData] = React.useState(() => makeData(10000));
   const [originalData] = React.useState(data);
   const [tabValue, setTabValue] = React.useState(0);
-  const [openModal, setModal] = React.useState(false);
   const [roles, setRoles] = React.useState([
-    { name: 'Srigar', id: 1 },
-    { name: 'Sam', id: 2 },
-    { name: 'Srigar', id: 1 },
-    { name: 'Sam', id: 2 },
-    { name: 'Srigar', id: 1 },
-    { name: 'Sam', id: 2 },
-    { name: 'Srigar', id: 1 },
-    { name: 'Sam', id: 2 },
-    { name: 'Srigar', id: 1 },
-    { name: 'Sam', id: 2 },
-    { name: 'Srigar', id: 1 },
-    { name: 'Sam', id: 2 },
+    { label: 'Grapes 🍇', value: 'grapes' },
+    { label: 'Mango 🥭', value: 'mango' },
+    { label: 'Strawberry 🍓', value: 'strawberry', disabled: true },
+    { label: 'Watermelon 🍉', value: 'watermelon' },
+    { label: 'Pear 🍐', value: 'pear' },
+    { label: 'Apple 🍎', value: 'apple' },
+    { label: 'Tangerine 🍊', value: 'tangerine' },
+    { label: 'Pineapple 🍍', value: 'pineapple' },
+    { label: 'Peach 🍑', value: 'peach' },
   ]);
-  const handleChangeTab = (event) => {
-    setTabValue(event.target.value);
-  };
-  const handleModalClose = (value) => {
-    setModal(value);
-  };
+  const [select, setSelect] = React.useState([]);
+
   return (
-    <div className='booking-table-container'>
+    <div className='user-table-container'>
       <Styles>
-        <div className='create-button'>
-          <CustomButton
-            btnText='Create New Booking'
-            className='btn-lg bg-dark'
-            handleClick={() => {
-              setModal(true);
-            }}
-          />
-        </div>
-        <div className='react-table'>
-          <Table columns={columns} data={data} />
-        </div>
+        <AppBar position='static'>
+          <div className='tabs'>
+            <div
+              className={`user-data ${tabValue === 0 && 'bottom-border'}`}
+              onClick={() => {
+                setTabValue(0);
+              }}
+            >
+              User Data
+            </div>
+            <div
+              className={`user-role ${tabValue === 1 && 'bottom-border'}`}
+              onClick={() => {
+                setTabValue(1);
+              }}
+            >
+              User Role
+            </div>
+          </div>
+        </AppBar>
+
+        {!tabValue ? (
+          <div className='react-table'>
+            <Table columns={columns} data={data} />
+          </div>
+        ) : (
+          <UserRoleTable />
+        )}
       </Styles>
-      {/* Modals */}
-      <BookingPopup isOpen={openModal} handleModalClose={handleModalClose} />
     </div>
   );
 }
 
-export default BookingsTable;
+export default UserManagement;

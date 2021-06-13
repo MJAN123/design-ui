@@ -1,20 +1,44 @@
 .booking-table-container {
-  width: 60%;
-  .rdt_Table {
-    color: $primary-light;
+  display: flex;
+  justify-content: center;
+  color: $primary-light;
+
+  table {
+    box-shadow: 0 0 250px $green;
+    border-spacing: 0;
+
+    tr:nth-child(even) {
+      background-color: $tableEven;
+    }
+    thead {
+      tr {
+        @include ingredientButton;
+        color: white;
+        font-weight: bold;
+        input {
+          &::placeholder {
+            color: wheat;
+          }
+        }
+      }
+    }
+    tbody {
+      tr {
+        &:hover {
+          color: white;
+        }
+      }
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid $green;
+      margin: 0;
+      padding: 0.5rem 2rem !important;
+    }
   }
-  .rdt_TableHeadRow {
-    background-color: $primary-light;
-    color: $light;
-  }
-  .rdt_TableRow {
-    background-color: $base-bgcolor;
-    color: $primary-light;
-  }
-  .table-content {
-    box-shadow: 0 0 250px $drak;
-  }
-  .rdt_TableHeader {
-    display: none;
-  }
+}
+
+.create-button {
+  margin-bottom: 20px;
 }

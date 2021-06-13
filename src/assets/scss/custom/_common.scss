@@ -1,0 +1,52 @@
+// Search Input Styling
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .search-input {
+    width: 50px;
+    border-right: none;
+
+    outline: none;
+    color: $green;
+    input {
+      width: 100%;
+      border: none;
+      background-color: transparent;
+      outline: none;
+      color: $primary-light;
+      &:focus {
+        box-shadow: none;
+      }
+      &:hover {
+        box-shadow: none;
+        border-bottom: 1px solid white;
+      }
+    }
+  }
+}
+
+// Button Styling
+
+.btn {
+  button {
+    @include ingredientButton;
+    color: $light;
+    cursor: pointer;
+
+    border: 1px solid $primary-dark;
+    border-radius: 999px;
+
+    &:hover {
+      @include ingredientButtonHover;
+    }
+  }
+  &.btn-lg {
+    button {
+      padding: 5px 30px;
+      border-radius: 999px;
+    }
+  }
+}

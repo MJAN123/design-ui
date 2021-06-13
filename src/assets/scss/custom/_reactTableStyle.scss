@@ -1,0 +1,87 @@
+.react-table {
+  ._3vt7_Mh4hRCFbp__dFqBCI {
+    width: 70%;
+  }
+  ._7ahQImyV4dj0EpcNOjnwA {
+    background-color: transparent;
+    color: $primary-light;
+  }
+  .lhyQmCtWOINviMz0WG_gr {
+    background-color: $green;
+
+    &:hover {
+      @include ingredientButtonHover;
+    }
+  }
+  .row-button {
+    display: flex;
+  }
+  table {
+    box-shadow: 0 0 250px $green;
+    border-spacing: 0;
+
+    tr:nth-child(even) {
+      background-color: $tableEven;
+    }
+    thead {
+      tr {
+        @include ingredientButton;
+        color: white;
+        font-weight: bold;
+        input {
+          &::placeholder {
+            color: wheat;
+          }
+        }
+      }
+    }
+    tbody {
+      tr {
+        &:hover {
+          color: white;
+        }
+      }
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid $green;
+      margin: 0;
+      padding: 0.3rem 0.5rem;
+    }
+  }
+
+  .pagination {
+    // padding: 0.5rem;
+  }
+
+  .table-body {
+    select {
+      width: 100%;
+      background-color: transparent;
+      color: $primary-light;
+      outline: none;
+    }
+    .MuiInput-root {
+      background-color: $primary-light;
+    }
+    .MuiMenu-list {
+      background-color: $primary-light;
+    }
+  }
+  .pagination {
+    margin-top: 10px;
+    width: 70%;
+    padding: 10px;
+    border-top-right-radius: 199px;
+    color: $primary-light;
+    background-color: $base-bgcolor;
+    input {
+      background-color: $primary-light;
+      color: white;
+    }
+    select {
+      background-color: $primary-light;
+    }
+  }
+}

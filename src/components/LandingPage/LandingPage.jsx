@@ -31,8 +31,6 @@ export default class LandingPage extends Component {
         </div>
         <div className='landing-page-content'>
           <Drawer />
-          {isSettingOpen === 'setting' && <SettingModal />}
-          {isSettingOpen === 'Booking' && <BookingsTable />}
         </div>
       </div>
     );

@@ -1,0 +1,178 @@
+.pop-up-container {
+  height: auto;
+  ._3vt7_Mh4hRCFbp__dFqBCI {
+    width: 30%;
+  }
+  ._7ahQImyV4dj0EpcNOjnwA {
+    background-color: $primary-light;
+  }
+  .lhyQmCtWOINviMz0WG_gr {
+    background-color: $green;
+    &:hover {
+      @include ingredientButtonHover;
+    }
+  }
+  .rmsc {
+    width: 100px;
+  }
+  .dropdown-heading {
+    background-color: $green !important;
+    color: $wheat !important;
+  }
+  .dropdown-heading {
+    height: 20px !important;
+    background-color: $green;
+  }
+  .panel-content {
+    background-color: $green !important;
+    .options {
+      &:hover {
+        background-color: linear-gradient(
+          160deg,
+          #4f9271 50%,
+          #378f7b 100%
+        ) !important;
+      }
+    }
+  }
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: $green;
+  padding: 10px;
+  .title {
+    color: $wheat;
+  }
+}
+.model-content {
+  height: 300px;
+  overflow-y: auto;
+}
+.model-actions {
+  margin-top: 10px;
+  border: 1px solid $green;
+  height: 50px;
+  display: flex;
+  padding: 0rem 1rem;
+  justify-content: space-between;
+  align-items: center;
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    .close-button {
+      margin: 0px 10px;
+    }
+  }
+  .create-new {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .icon {
+      margin-right: 10px;
+    }
+  }
+}
+.popup-entry {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding: 1rem;
+  border-bottom: 1px solid $green;
+
+  .client-section {
+    .legal-entity {
+      display: flex;
+      justify-content: space-between;
+      .text {
+        color: $primary-light;
+        margin-right: 10px;
+      }
+      .data-selection {
+        select {
+          background-color: $green;
+          height: 20px;
+          width: 100px;
+          color: $wheat;
+        }
+      }
+      margin-bottom: 15px;
+    }
+    .books {
+      display: flex;
+      justify-content: space-between;
+      .text {
+        color: $primary-light;
+        margin-right: 10px;
+      }
+      .data-selection {
+        select {
+          background-color: $green;
+        }
+      }
+      margin-bottom: 15px;
+    }
+    .instrument {
+      display: flex;
+      justify-content: space-between;
+      .text {
+        color: $primary-light;
+        margin-right: 10px;
+      }
+      .data-selection {
+        select {
+          background-color: $green;
+        }
+      }
+    }
+  }
+  .internal-section {
+    .legal-entity {
+      display: flex;
+      justify-content: space-between;
+      .text {
+        color: $primary-light;
+        margin-right: 10px;
+      }
+      .data-selection {
+        select {
+          background-color: $green;
+          height: 20px;
+          width: 100px;
+          color: $wheat;
+        }
+      }
+      margin-bottom: 15px;
+    }
+    .books {
+      display: flex;
+      justify-content: space-between;
+      .text {
+        color: $primary-light;
+        margin-right: 10px;
+      }
+      .data-selection {
+        select {
+          background-color: $green;
+        }
+      }
+      margin-bottom: 15px;
+    }
+    .instrument {
+      display: flex;
+      justify-content: space-between;
+      .text {
+        color: $primary-light;
+        margin-right: 10px;
+      }
+      .data-selection {
+        select {
+          background-color: $green;
+        }
+      }
+    }
+  }
+}

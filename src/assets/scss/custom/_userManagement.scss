@@ -1,0 +1,48 @@
+.user-table-container {
+  color: $primary-light;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  .tabs {
+    display: flex;
+    align-items: center;
+    min-height: 40px;
+    color: $primary-light;
+
+    div {
+      cursor: pointer;
+    }
+    .user-data {
+      margin: 0px 20px;
+    }
+    .bottom-border {
+      border-bottom: 2px solid $green;
+    }
+  }
+  .rmsc {
+    width: 100px;
+  }
+  .rmsc .dropdown-container {
+    background-color: transparent !important;
+  }
+  .dropdown-heading {
+    background-color: transparent !important;
+    color: $wheat !important;
+  }
+  .dropdown-heading {
+    height: 20px !important;
+    background-color: $green;
+  }
+  .panel-content {
+    background-color: $green !important;
+    .options {
+      &:hover {
+        background-color: linear-gradient(
+          160deg,
+          #4f9271 50%,
+          #378f7b 100%
+        ) !important;
+      }
+    }
+  }
+}

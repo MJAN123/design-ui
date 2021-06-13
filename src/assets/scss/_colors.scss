@@ -1,14 +1,20 @@
 $primary-light: #7e8ba3;
 $primary-dark: #a5a9af;
-$primary-medium: #fdf;
+$primary-medium: rgb(158, 158, 158);
+$secondary-main: #378f7b;
+$secondary-light: #74a99c;
+$secondary-dark: #0e614e;
 $base-bgcolor: #17181c;
 $light: #fff;
-$drak: #5bbbb9;
+$drak: #070707;
 $error: rgb(248, 15, 15);
 $green: #378f7b;
+$wheat: #f5deb3;
+
+// React Table Color
+$tableEven: rgb(36, 31, 31);
 @mixin ingredientButton {
   background-image: linear-gradient(160deg, #8ceabb 0%, #378f7b 100%);
-  
 }
 @mixin ingredientButtonHover {
   background-image: linear-gradient(160deg, #4f9271 50%, #378f7b 100%);
